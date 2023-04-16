@@ -36,7 +36,6 @@ In the above example, we define a `HelloWorld` resource that returns a simple JS
 
 A resource is a Python class that defines the HTTP methods that are allowed on a particular URL endpoint. Here is an example:
 
-
 ```python
 from simple_flask_restful import Flask, Resource, Api, reqparse
 class Multiply(Resource):
@@ -58,9 +57,18 @@ To add this resource to the `Api` object, we use the `add_resource` method:
 
 
 
-`api.add_resource(Multiply, '/multiply')`
+`api.add_resource(Multiply, '/multiply', '/product')`
 
-This maps the `Multiply` resource to the `/multiply` URL endpoint.
+This maps the `Multiply` resource to the `/multiply` and `/multiply` URL endpoint.
+
+
+**Return Format:** The return of method (get/post/put/delete) in the child class of Resource should be a dictionary or in JSON format. The default HTTP status code is 200. 
+
+**Example:**
+`return {'result': result}`
+is the same as
+`return {'result': result}, 200`
+
 
 ### Running the Server
 
