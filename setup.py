@@ -14,7 +14,7 @@ setup(
     version='0.1.0',
     author='William Wang',
     author_email='williamwangatsydney@gmail.com',
-    description='wrap up flask for restul interface',
+    description='wrap up flask for restful interface',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/AutomationLover/simple_flask_restful',
