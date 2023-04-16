@@ -21,56 +21,63 @@ Here are some examples of how to interact with the API using cURL:
 
     Output:
 
+    ```
+    {
+        "message":"Hello, world!"
+    }
+    ```  
     
-```jsonCopy code
-{
-    "message":"Hello, world!"
-}
-```  
 2.  Multiply two numbers:
     
     curl cli
 
-    `curl 'http://localhost:5000/multiply?num1=2.5\&num2=4.2'`
+    `curl 'http://localhost:5000/multiply?num1=2.5&num2=4.2'`
 
     Output:
-    
-    
-    
-```jsonCopy code
-{
-    "result":10.5
-}
-```
+
+    ```
+    {
+        "result":10.5
+    }
+    ```
     
 3.  Add two numbers:
     
     curl cli
     
-    `curl 'http://localhost:5000/calculator?num1=3.5\&num2=4.2'`
+    `curl 'http://localhost:5000/calculator?num1=3.5&num2=4.2'`
     
     Output:
     
-```jsonCopy code
-{
-    "result":7.7
-}
-```
+    ```jsonCopy code
+    {
+       "result":7.7
+    }
+    ```
     
 4.  Subtract two numbers:
     
     curl cli
     
-    `curl -X POST 'http://localhost:5000/calculator' -d "num1=3.5" -d "num2=4.2"`
-    
+    `curl -X POST 'http://localhost:5000/calculator?num1=3.5&num2=4.2'`
+
+    or
+
+    ```shell
+    curl -X POST 'http://localhost:5000/calculator' \
+    -H 'Content-Type: application/json' \
+    -d '{"num1": 3.5, "num2": 4.2}'
+    ```
+
     Output:
 
-    
-```jsonCopy code
-{
-    "result":-0.6999999999999993
-}
- ```   
+    ```jsonCopy code
+    {
+        "result":-0.7000000000000002
+    }
+    ```   
+    *The value may be a bit different from -0.7000000000000002, as it is float type.*
+
 5.  Abort with custom error message:
     
     curl cli
@@ -79,12 +86,11 @@ Here are some examples of how to interact with the API using cURL:
     
     Output:
     
-```jsonCopy code
-{
-    "message":"This is an error message."
-}
-
-```
+    ```jsonCopy code
+    {
+        "message":"This is an error message."
+    }
+    ```
     
 6.  Use not realized method:
     
@@ -94,12 +100,11 @@ Here are some examples of how to interact with the API using cURL:
     
     Output:
     
-```jsonCopy code
-    
-{
-  "message": "Unimplemented method GET"
-}
-```
+    ```
+    {
+      "message": "Unimplemented method GET"
+    }
+    ```
     
 
 You can also interact with the API using other tools such as Postman or a web browser.
