@@ -3,6 +3,7 @@ from setuptools import (
     find_packages
 )
 
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -11,7 +12,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='simple_flask_restful',
-    version='0.1.0',
+    version='0.3.0',
     author='William Wang',
     author_email='williamwangatsydney@gmail.com',
     description='wrap up flask for restful interface',
